@@ -157,7 +157,8 @@ In the above example, by changing the company name it is reflected in all other 
 
 **Blank final variable :** A final variable declared but not assigned is known as a blank final variable. It can be initialized within a constructor only. It raises compilation error if it is not initialized because it should be given a value somewhere in the program and that too from a constructor only.
 
-**Static blank final variable :** It is a blank final variable declared as static. That is, a final static variable declared but not given a value or not initialized is known as static blank final variable.It can be initialized through a static block only.
+## Static blank final variable :
+It is a blank final variable declared as static. That is, a final static variable declared but not given a value or not initialized is known as static blank final variable.It can be initialized through a static block only.
 Here is an example illustrating initialization of blank final variables-
 
 ```java
@@ -223,14 +224,14 @@ class IdNotFound extends Exception {
     IdNotFound() {} 
 } 
 ```
-** Output: **
+**Output:**
 `
 prog.java:8: error: variable USER_ID might already have been assigned
 USER_ID = GUEST_ID;
 ^
 1 error
 `
-** The USER_ID field is a static blank final. ** It is clear that the exception can be thrown in the try block only if the assignment to USER_ID fails, so it is perfectly safe to assign to USER_ID in the catch block. Any execution of the static initializer block will cause exactly one assignment to USER_ID, which is just what is required for blank finals. But this program fails because, A blank final field can be assigned only at points in the program where it is definitely unassigned.
+The USER_ID field is a static blank final. It is clear that the exception can be thrown in the try block only if the assignment to USER_ID fails, so it is perfectly safe to assign to USER_ID in the catch block. Any execution of the static initializer block will cause exactly one assignment to USER_ID, which is just what is required for blank finals. But this program fails because, A blank final field can be assigned only at points in the program where it is definitely unassigned.
 
 Here, compiler is not sure whether its been assigned in try block or not, so the program doesn’t compile. We can solve this by removing the static block and initializing the USER_ID at the time of declaration.
 
@@ -264,7 +265,7 @@ class IdNotFound extends Exception {
     IdNotFound() {} 
 } 
 ```
-** Output: **
+**Output:**
 `
 Logging in as guest
 User ID: -1
